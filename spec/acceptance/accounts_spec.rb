@@ -323,7 +323,7 @@ describe 'accounts invoke', unless: UNSUPPORTED_PLATFORMS.include?(os[:family]) 
       expect(user('hunner')).to have_login_shell '/bin/true'
       expect(user('hunner')).to have_home_directory '/test/hunner'
       expect(user('hunner')).to contain_password 'hi' unless os[:family] == 'solaris'
-      expect(user('hunner').maximum_days_between_password_change).to match 60
+      expect(user('hunner').maximum_days_between_password_change).to match 45
 
       expect(file('/test/hunner')).to be_directory
       expect(file('/test/hunner')).to be_mode 700
